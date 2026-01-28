@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Alla användare</title>
+</head>
+<body>
+
+<h1>Alla användare</h1>
+
+<a href="/users/new">Skapa ny användare</a>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Användarnamn</th>
+        <th>Email</th>
+        <th>Åtgärder</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.email}"></td>
+        <td>
+            <a th:href="@{/users/edit/{id}(id=${user.id})}">Redigera</a> |
+            <a th:href="@{/users/delete/{id}(id=${user.id})}">Ta bort</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
+

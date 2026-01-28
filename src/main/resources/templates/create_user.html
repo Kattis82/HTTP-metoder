@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sv" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Skapa användare</title>
+</head>
+<body>
+
+<h1>Skapa ny användare</h1>
+
+<form th:action="@{/users}" th:object="${user}" method="post">
+
+    <div>
+        <label for="username">Användarnamn:</label>
+        <input type="text" id="username" th:field="*{username}" required>
+    </div>
+
+    <br>
+
+    <div>
+        <label for="password">Lösenord:</label>
+        <input type="password" id="password" th:field="*{password}" required>
+    </div>
+
+    <br>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" th:field="*{email}" required>
+    </div>
+
+    <br>
+
+    <button type="submit">Spara användare</button>
+
+</form>
+
+</body>
+</html>
+
+

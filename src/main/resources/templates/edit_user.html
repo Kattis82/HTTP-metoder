@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Redigera användare</title>
+</head>
+<body>
+
+<h1>Redigera användare</h1>
+
+<form th:action="@{/users/update/{id}(id=${user.id})}"
+      th:object="${user}"
+      method="post">
+
+    <label>Användarnamn:</label>
+    <input type="text" th:field="*{username}" required/>
+    <br/>
+
+    <label>Email:</label>
+    <input type="email" th:field="*{email}" required/>
+    <br/>
+
+    <button type="submit">Uppdatera</button>
+</form>
+
+<a href="/users">Tillbaka</a>
+
+</body>
+</html>
+
